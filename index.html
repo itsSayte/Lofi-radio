@@ -3,31 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Présentation</title>
-    <!-- Lien vers le fichier CSS -->
-    <link rel="stylesheet" href="css.css">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+    <title>Radio Live</title>
+    <link rel="stylesheet" href="/src/css/radio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
-    <div id="Title1" class="container">
-    <h1 class="text">Chill Vibes</h1>
+
+
+
+<main class="content-wrapper">
+
+    <div class="text-header">
+        <h1>Radio Jazz</h1>
+        <p>Diffusion en direct</p>
     </div>
-    <script>
-        function changeVideo() {
-          var newVideoId = prompt("4xDzrJKXOOY");
-          if (newVideoId) {
-            var iframe = document.getElementById('youtube-video');
-            iframe.src = 'https://www.youtube.com/embed/' + newVideoId;
-          }
-        }
-      </script>
-    <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/jfKfPfyJRdk" title="lofi hip hop radio 📚 - beats to relax/study to" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
+
+    <div class="player">
+
+        <!-- Bouton Play / Pause -->
+        <button id="playBtn" class="btn">
+            <i class="fa-solid fa-play" style="color:white;"></i>
+        </button>
+
+
+        <!-- Volume -->
+        <div class="volume-container">
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="1">
+            <span id="volume-value">100%</span>
+        </div>
+
     </div>
-    <button id="change-video-btn" onclick="changeVideo()">Changer la vidéo</button>
+    <a href="https://github.com/itsSayte/Lofi-radio" target="_blank" class="social-link">
+        <i class="fa-brands fa-github"></i>
+    </a>
+</main>
 
+<!-- Audio -->
+ <!-- Audio source https://www.radiorsj.be/ -->
+<audio id="radio" src="https://stream.srg-ssr.ch/m/rsj/mp3_128"></audio>
 
-
+<!-- JS à la fin = IMPORTANT -->
+<script src="/src/js/radio.js"></script>
 
 </body>
 </html>
